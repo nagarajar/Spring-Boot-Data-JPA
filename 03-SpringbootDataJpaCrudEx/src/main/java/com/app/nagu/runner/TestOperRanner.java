@@ -1,12 +1,14 @@
 package com.app.nagu.runner;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.app.nagu.entity.Product;
+import com.app.nagu.exception.ProductNotFoundException;
 import com.app.nagu.repo.ProductRepository;
 
 @Component
@@ -52,7 +54,45 @@ public class TestOperRanner implements CommandLineRunner
 
 		//5. count() method
 		System.out.println(repo.count());
-
+		
+		System.out.println("*****************");
+		//6. findById(id)
+		Optional<Product> opt = repo.findById(19);
+		if(opt.isPresent()) {
+			Product p = opt.get();
+			System.out.println(p);
+		}
+		else
+		{
+			System.out.println("Data Not Found");
+		}
+		
+		// We can write same thing of above like below
+		Product p = repo.findById(11).orElseThrow(() -> new ProductNotFoundException("Not Exist"));
+		System.out.println(p);
+		
+		System.out.println("*****************");
+		//7. findAllById(array of ids)
+		Iterable<Product> list = repo.findAllById(Arrays.asList(11,22,32,12,13));
+		list.forEach(System.out::println);
+		
+		//8. deleteById(id)
+		//repo.deleteById(11);
+		//repo.deleteById(19);
+		
+		//9. delete(object)
+		/*
+		 * repo.delete( repo.findById(77).orElseThrow( () -> new
+		 * ProductNotFoundException( String.format("-----%s Not Having %d---" ,
+		 * Product.class.getName(),77))) );
+		 */
+		
+		//10. deleteAllById(Arrays of id)
+		//repo.deleteAllById(Arrays.asList(10,11));
+		
+		//11. deleteAll()
+		repo.deleteAll();
+		
 	}
 
 }

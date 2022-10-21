@@ -38,4 +38,16 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer>
 	//SQL:5 fetch all columns and one row
 	@Query("select e from Employee e where e.empId=:id")
 	Optional<Employee> fetchEmpById(Integer id);
+	
+	//SQL :6 Fetch the count of employees present under each dept
+	@Query("select empDept, count(empDept) as no_of_employees from Employee group by empDept")
+	List<Object[]> getCountByDept();
+	
+	//SQL :7 Fetch the max and min sal of employees 
+	@Query("select min(empSal) from Employee")
+	long getMinSal();
+	 
+	@Query("select max(empSal) from Employee")
+	long getMaxSal();
+	
 }

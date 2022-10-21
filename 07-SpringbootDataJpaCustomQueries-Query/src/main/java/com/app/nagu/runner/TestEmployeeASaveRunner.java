@@ -47,9 +47,19 @@ public class TestEmployeeASaveRunner implements CommandLineRunner
 			System.out.println("No Data Found");
 		}
 		System.out.println("*******************************");
-		Employee e = repo.fetchEmpById(107)
+		Employee e = repo.fetchEmpById(104)
 						 .orElseThrow(() -> new RuntimeException("No Data Found"));
 		System.out.println(e);
+		System.out.println("*******************************");
+		
+		repo.getCountByDept()
+			.stream()
+			.map(obj -> obj[0] +" : "+obj[1])
+			.forEach(System.out::println);
+			
+		System.out.println("*******************************");
+		System.out.println("Min sal of emp = "+repo.getMinSal());
+		System.out.println("Max sal of emp = "+repo.getMaxSal());
 		System.out.println("*******************************");
 	}
 

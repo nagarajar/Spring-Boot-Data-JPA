@@ -1,5 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy>
-    <typeInfo handle="=12-SpringbootDataJpaAssociationMappingManyToOne/C:\/Users\/nagar\/.m2\/repository\/org\/springframework\/boot\/spring-boot\/2.7.4\/spring-boot-2.7.4.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.boot=/=/maven.artifactId=/spring-boot=/=/maven.version=/2.7.4=/=/maven.scope=/compile=/&lt;org.springframework.boot(CommandLineRunner.class[CommandLineRunner" modifiers="1537" timestamp="1664169654963"/>
-    <typeInfo handle="=12-SpringbootDataJpaAssociationMappingManyToOne/C:\/Users\/nagar\/.m2\/repository\/org\/aspectj\/aspectjweaver\/1.9.7\/aspectjweaver-1.9.7.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.aspectj=/=/maven.artifactId=/aspectjweaver=/=/maven.version=/1.9.7=/=/maven.scope=/compile=/&lt;org.aspectj.apache.bcel.util(ClassLoaderReference.class[ClassLoaderReference" modifiers="1537" timestamp="1648832940839"/>
-</typeInfoHistroy>
+<typeInfoHistroy/>

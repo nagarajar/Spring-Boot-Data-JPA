@@ -31,6 +31,9 @@ public class TestInsertDataRunner implements CommandLineRunner {
 		urepo.save(u1);
 		urepo.save(u2);
 		
+		rrepo.findAll().forEach(System.out::println);
+		urepo.findAll().forEach(System.out::println);
+		
 	}
 
 }
